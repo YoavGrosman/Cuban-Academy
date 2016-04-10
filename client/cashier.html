@@ -1,0 +1,33 @@
+<head>
+  <title>The Cuban Academy Website</title>
+</head>
+
+<body>
+</body>
+
+<template name='eventCreator'>
+  <div class="container">
+    <div class="row text-center">
+      <h1>ברוכים הבאים לאקדמיה הישראלית לריקודים קובניים - {{eventTime}}</h1>
+      <hr />
+      <button dir="rtl" class="closeEvening col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi ">יאללה סגור ת'ערב</button>
+      <button dir="rtl" class='createEvent col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>פתח את הערב</button>
+      <button dir="rtl" class="removeDancer col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi">Remove Dancer</button>
+      <button dir="rtl" class='addDancer col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>Add Dancer</button>
+      <h1 dir="rtl" class='dancersCounter col-md-12'>יש במועדון כרגע {{counter}}  אנשים</h1>
+    </div>
+  </div>
+</template>
+
+<template name='dashboard'>
+  <div class="container">
+    <div class="row text-center">
+      <h2 dir="rtl">{{numbersOfDancers}} אנשים הגיעו הערב</h2>
+      {{#if isClosed}}
+        <h4 dir='rtl'>הקופה נסגרה.</h4>
+      {{/if}}
+      <h4 dir="rtl">עלות הפקת הערב - {{costs}}</h4>
+      <h4 dir="rtl">מחיר פר רקדן - {{pricePerDancer}}</h4>
+    </div>
+  </div>
+</template>
