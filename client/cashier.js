@@ -34,7 +34,7 @@ Template.eventCreator.events({
     'click .createEvent'() {
         let currEvent = getEvent();
         
-        if (!currEvent.closed) { 
+        if (currEvent && !currEvent.closed) { 
             alert('הערב כבר פתוח.');
         } else {
             var eveningPrice = prompt("מה מחיר העלות של הערב", "1500");
