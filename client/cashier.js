@@ -112,7 +112,7 @@ Template.dashboard.helpers({
    },
    pricePerDancer() {
         let currEvent = getEvent();
-        return (currEvent.costs / currEvent.dancers) > 40 ? '₪40 (מחיר מקסימלי לרקדן)' : "₪" + Math.floor(currEvent.costs / currEvent.dancers);
+        return (currEvent.costs / currEvent.dancers) > 40 ? '₪40 (מחיר מקסימלי)' : "₪" + Math.floor(currEvent.costs / currEvent.dancers);
    },
    
    isClosed() {
