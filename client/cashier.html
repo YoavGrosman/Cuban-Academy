@@ -8,27 +8,54 @@
 <template name='eventCreator'>
   <div class="container">
     <div class="row text-center">
-      <h1>ברוכים הבאים לאקדמיה הישראלית לריקודים קובניים - {{eventTime}}</h1>
+      <h1 style='margin-top: 50px;'>ברוכים הבאים לאקדמיה הישראלית לריקודים קובניים - {{eventTime}}</h1>
       <hr />
-      <button dir="rtl" class="closeEvening col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi ">יאללה סגור ת'ערב</button>
-      <button dir="rtl" class='createEvent col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>פתח את הערב</button>
-      <button dir="rtl" class="removeDancer col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi">Remove Dancer</button>
-      <button dir="rtl" class='addDancer col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>Add Dancer</button>
+      <button dir="rtl" class="closeEvening col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi ">סגור את הקופה</button>
+      <button dir="rtl" class='createEvent col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>פתח את הקופה</button>
+      <button dir="rtl" class="removeDancer col-md-2 col-md-offset-3 btn btn-lg btn-primary btn-yogi">החסר רקדן</button>
+      <button dir="rtl" class='addDancer col-md-2 col-md-offset-2 btn btn-lg btn-primary btn-yogi'>הוסף רקדן</button>
+
       <h1 dir="rtl" class='dancersCounter col-md-12'>יש במועדון כרגע {{counter}}  אנשים</h1>
     </div>
   </div>
 </template>
 
 <template name='dashboard'>
-  <div class="container">
+  <div class="container" dir="rtl">
     <div class="row text-center">
-      <img src="/images/logo.jpg" />
-      <h2 dir="rtl">{{numbersOfDancers}} אנשים הגיעו הערב</h2>
+      <img src="/images/white-logo-cropped.png" style="height: 350px;" />
+      <h1>תודה רבה שבאת לרקוד אתנו בליין ימי חמישי של האקדמיה!</h1>
+      <hr>
+<p class="thank-you text-right">
+אנחנו באקדמיה רואים את עולם הסלסה והריקודים הקובניים <strong>כמקצוע</strong> ועושים את המקסימום כדי לתת לך חווית סלסה איכותית מדוייקת ומהנה.
+<br>
+אנו מאמינים בקשר עם הקהל שלנו, בקבלת פידבק וביקורת, על-מנת להשתפר ולצמוח, וחושבים שעלינו לדרוש מעצמנו את המקסימום עבור קהל לקוחותינו. <br> 
+בנוסף, אנו מאמינים כי אם לא הצלחנו לספק עבורך חווית סלסה בעלת ערך לא מגיע לנו להרוויח כסף. לכן, החלטנו שיהיה נכון להעביר את השליטה אליך ולבקש ממך להעריך אותנו באמצעות התשלום לפי שביעות רצונך. <br>
+</p>
+<hr>
+<p class="thank-you text-right">
+לפניך המחיר המינמלי לתשלום עבור הערב: <br>
+1. ₪{{costs}} - עלות הפקת הערב (מורכב מהשכרת הסטודיו, הדרכה, תקלוט, קופה, בר, ציוד וצ'ופרים) <br>
+2. {{numbersOfDancers}}* רקדנים - מספר הרקדנים שהגיעו הערב להנות יחד איתך. <br> <strong>*מספר זה מתעדכן בלייב</strong> <br>
+<hr style=" border-top-color: #565454; margin: 15px 0px 5px;">
+<strong style='font-size: 40px; color: #8080DE;'>המחיר המינימלי לרקדן - {{pricePerDancer}}</strong> 
+<br>
+</p>
+<p class="thank-you text-right">
+אז איך תדע כמה כסף לשלם? אהה זה פשוט! <br>
+<strong> אם לא נהנת מהערב </strong> נבקש ממך לשלם רק את מחיר עלות הערב המופיע על הצג. זו הדרך הפשוטה שלך להגיד לנו שיש לנו הרבה מה לשפר ו<strong>שלא קיבלת ערך מערב זה ולכן לנו לא מגיע להרוויח</strong>. זה בסדר, אם זה המצב, נשמח לקבל את הערותיך והארותיך בטופס האלקטרוני בדף העסקי שלנו. ואם לא - זה גם בסדר. :)
+</p>
+<p class="thank-you text-right">
+<strong>אם כן קיבלת ערך ונהנת מערב</strong> (ואנחנו מאוד מקווים שזה המצב) אנחנו נשמח לקבל את הסכום שאתה מאמין שמגיע לנו על ממה שאנחנו עושים. <br>
+נשמח אם תיקח בחשבון כי עלות כרטיס כניסה ממוצע לערב סלסה בישראל היא 35-40 ₪. <br>
+נשמח לתשלום לפי שיקול דעתך ומידת הנאתך<br><br>
+תודה רבה!
+</p>
+
       {{#if isClosed}}
-        <h4 dir='rtl'>..הקופה נסגרה.</h4>
+        <hr>
+        <h3 dir='rtl'>הקופה נסגרה...</h3>
       {{/if}}
-      <h4 dir="rtl">עלות הפקת הערב - {{costs}}</h4>
-      <h4 dir="rtl">מחיר פר רקדן - {{pricePerDancer}}</h4>
     </div>
   </div>
 </template>
