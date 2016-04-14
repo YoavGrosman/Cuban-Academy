@@ -3,9 +3,13 @@
 .btn-yogi {
     padding: 50px 0px;
     font-size: 26px;
-    margin-top: 50px;
+    margin-top: 75px;
 }
 
 .dancersCounter {
     margin-top: 150px;
+}
+
+.thank-you {
+    font-size: 24px;
 }
